@@ -26,6 +26,7 @@ jobs:
     #     apt update -y
     #     apt install -y google-chrome-stable
         
+        
     - name: Setup test DB
       run: bundle exec rails db:setup
     
