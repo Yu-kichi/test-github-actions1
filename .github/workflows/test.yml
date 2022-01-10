@@ -8,9 +8,7 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2 
     - name: Set up Ruby
@@ -25,7 +23,9 @@ jobs:
     #     echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list
     #     apt update -y
     #     apt install -y google-chrome-stable
-        
+    - name: yarn install
+      run:  yarn install --check-files
+      
     - name: Setup test DB
       run: bundle exec rails db:setup
     
